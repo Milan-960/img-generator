@@ -8,7 +8,7 @@ function ImgDisplay(props) {
           <div className="col-md-12">
             <div className="row border overflow-hidden mb-4">
               <div className="col-lg-8 p-2 d-lg-block">
-                <div className="DisplayImg">
+                <div id="my-meme" className="DisplayImg">
                   <img
                     src={props.data.randomImg}
                     className="img-fluid img-thumbnail"
