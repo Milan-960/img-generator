@@ -1,0 +1,22 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  font-family: "Berkshire Swash", cursive;
+  color: #111f28;
+  font-size: 42px;
+  text-shadow: 1px 1px #acb7c3;
+}
+
+canvas {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
