@@ -3,7 +3,7 @@ import React from "react";
 import htmlToImage from "html-to-image";
 import download from "downloadjs";
 
-import MemeDisplay from "./MemeDisplay";
+import ImgDisplay from "../ImgDisplay/ImgDisplay";
 
 class ImgGenerator extends React.Component {
   constructor(props) {
@@ -32,27 +32,27 @@ class ImgGenerator extends React.Component {
   //Add random image
   handleRandom = (event) => {
     event.preventDefault();
-    const randNum = Math.floor(Math.random() * this.state.allMemeImgs.length);
-    const randMemeImg = this.state.allMemeImgs[randNum].url;
-    this.setState({ randomImg: randMemeImg });
+    const randNum = Math.floor(Math.random() * this.state.allImgImgs.length);
+    const randImgImg = this.state.allImgImgs[randNum].url;
+    this.setState({ randomImg: randImgImg });
   };
 
   //Download PNG image
   handlePng = () => {
     htmlToImage
-      .toPng(document.getElementById("my-meme"))
+      .toPng(document.getElementById("my-Img"))
       .then(function (dataUrl) {
-        download(dataUrl, "my-meme.png");
+        download(dataUrl, "my-Img.png");
       });
   };
 
   // Download JPEG image
   handleJpeg = () => {
     htmlToImage
-      .toJpeg(document.getElementById("my-meme"), { quality: 0.95 })
+      .toJpeg(document.getElementById("my-Img"), { quality: 0.95 })
       .then(function (dataUrl) {
         var link = document.createElement("a");
-        link.download = "my-meme.jpeg";
+        link.download = "my-Img.jpeg";
         link.href = dataUrl;
         link.click();
       });
@@ -60,7 +60,7 @@ class ImgGenerator extends React.Component {
 
   render() {
     return (
-      <MemeDisplay
+      <ImgDisplay
         handleChange={this.handleChange}
         handleRandom={this.handleRandom}
         handlePng={this.handlePng}

@@ -2,7 +2,7 @@
 
 ## Live
 
-[Watch Live Demo 🔥](https://img-text-generator.netlify.app/)
+[Watch Live Demo 🔥](https://img-text-generators.netlify.app/)
 
 ### For clone this repository in your machine pest below link in your terminal 👇
 
