@@ -40,7 +40,7 @@ class ImgGenerator extends React.Component {
   //Download PNG image
   handlePng = () => {
     htmlToImage
-      .toPng(document.getElementById("my-meme"))
+      .toPng(document.getElementById("my-img"))
       .then(function (dataUrl) {
         download(dataUrl, "text-img.png");
       });
@@ -49,7 +49,7 @@ class ImgGenerator extends React.Component {
   // Download JPEG image
   handleJpeg = () => {
     htmlToImage
-      .toJpeg(document.getElementById("my-meme"), { quality: 0.95 })
+      .toJpeg(document.getElementById("my-img"), { quality: 0.95 })
       .then(function (dataUrl) {
         var link = document.createElement("a");
         link.download = "text-img.jpeg";

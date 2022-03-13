@@ -2,13 +2,16 @@ import React from "react";
 
 function ImgDisplay(props) {
   return (
+    // main div
     <div className="jumbotron bg-info">
+      {/* main container */}
       <div className="container">
         <div className="row ">
           <div className="col-md-12">
             <div className="row border overflow-hidden mb-4">
               <div className="col-lg-8 p-2 d-lg-block">
-                <div id="my-meme" className="DisplayImg">
+                {/* This id is defined for downloading images */}
+                <div id="my-img" className="DisplayImg">
                   <img
                     src={props.data.randomImg}
                     className="img-fluid img-thumbnail"
@@ -18,7 +21,9 @@ function ImgDisplay(props) {
                   <h2 className="topText">{props.data.topText}</h2>
                 </div>
               </div>
+
               <div className="col-lg-4 p-2 d-flex flex-column position-static">
+                {/* input form for adding text into img */}
                 <form>
                   <div className="shadow-lg p-3 mb-3 bg-white rounded">
                     <p className="text-muted">Add image</p>
