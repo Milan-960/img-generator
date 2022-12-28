@@ -49,15 +49,14 @@ function ImgDisplay(props) {
 
                   <div className="shadow-lg p-3 mb-3 bg-white rounded">
                     <p className="text-muted">Remove background</p>
-                    <button
-                        type="button"
-                        s
-                        className="btn btn-outline-info"
-                        onClick={props.handleRemoveBg}
-                      >
-                        Remove Background
-                      </button>
-
+                    <input
+                      className="form-control border-info mb-2"
+                      type="text"
+                      name="topText"
+                      placeholder="Top phrase"
+                      value={props.data.topText}
+                      onChange={props.handleChange}
+                    />
                   </div>
 
                   <div className="shadow-lg p-3 mb-3 bg-white rounded text-center">
