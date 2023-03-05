@@ -72,7 +72,7 @@ class ImgGenerator extends React.Component {
       )
       .then((res) => {
         this.setLink("data:image/png;base64," + res.data.image);
-         this.setState({ topText: 'inPixio RemoveBG' });
+         this.setState({ topText: 'value' });
         } )
       .then(() => this.setLoading(0));
     }

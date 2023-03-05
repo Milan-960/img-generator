@@ -15,7 +15,6 @@ class ImgGenerator extends React.Component {
       topText: "",
       image:null,
       randomImg: "https://assets.imgix.net/unsplash/motorbike.jpg",
-      loading:null,
     };
   }
 
@@ -27,9 +26,7 @@ class ImgGenerator extends React.Component {
   setLink = (event) => {
     this.setState({ "randomImg": event,'image': event });
   };
-  setLoading= (event) => {
-    this.setState({ "loading": event });
-  };
+
   //Add local image
   handleUpload = (event) => {
     event.preventDefault();
@@ -59,7 +56,7 @@ class ImgGenerator extends React.Component {
   };
  //Download PNG image
   handleRemoveBg= () => {
-    this.setLoading(1);
+    console.log(this.state)
     if(this.state.image === null){
         this.setLink(source_no_bg)
     } else {
@@ -71,10 +68,9 @@ class ImgGenerator extends React.Component {
         fd
       )
       .then((res) => {
-        this.setLink("data:image/png;base64," + res.data.image);
-         this.setState({ topText: 'inPixio RemoveBG' });
+        this.setLink("data:image/png;base64," + res.data.image)
         } )
-      .then(() => this.setLoading(0));
+      .then(() => console.log(this.state));
     }
      
   };
@@ -103,7 +99,13 @@ class ImgGenerator extends React.Component {
         handleSetemoveBg={this.setLink}
         data={this.state}
       />
-
+      <ReactSpinnerTimer
+      timeInSeconds={60}
+      totalLaps={60}
+      isRefresh={false}
+      onLapInteraction={this.handleRemoveBg}
+      isPause={false}
+    />
     </>
     );
   }

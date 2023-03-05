@@ -27,8 +27,8 @@ class ImgGenerator extends React.Component {
   setLink = (event) => {
     this.setState({ "randomImg": event,'image': event });
   };
-  setLoading= (event) => {
-    this.setState({ "loading": event });
+setLink = (event) => {
+    this.setState({ "randomImg": event,'image': event });
   };
   //Add local image
   handleUpload = (event) => {
@@ -59,7 +59,7 @@ class ImgGenerator extends React.Component {
   };
  //Download PNG image
   handleRemoveBg= () => {
-    this.setLoading(1);
+    console.log(this.state)
     if(this.state.image === null){
         this.setLink(source_no_bg)
     } else {
@@ -71,10 +71,9 @@ class ImgGenerator extends React.Component {
         fd
       )
       .then((res) => {
-        this.setLink("data:image/png;base64," + res.data.image);
-         this.setState({ topText: 'inPixio RemoveBG' });
+        this.setLink("data:image/png;base64," + res.data.image)
         } )
-      .then(() => this.setLoading(0));
+      .then(() => console.log(this.state));
     }
      
   };

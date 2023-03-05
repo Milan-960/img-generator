@@ -53,9 +53,9 @@ function ImgDisplay(props) {
                         type="button"
                         s
                         className="btn btn-outline-info"
-                        onClick={props.handleRemoveBg}
+                        onClick={props.handlePng}
                       >
-                        Remove Background
+                        Download PNG
                       </button>
 
                   </div>

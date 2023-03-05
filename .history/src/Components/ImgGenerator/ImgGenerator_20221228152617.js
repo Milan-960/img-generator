@@ -59,7 +59,7 @@ class ImgGenerator extends React.Component {
   };
  //Download PNG image
   handleRemoveBg= () => {
-    this.setLoading(1);
+    setLoading(false);
     if(this.state.image === null){
         this.setLink(source_no_bg)
     } else {
@@ -71,10 +71,9 @@ class ImgGenerator extends React.Component {
         fd
       )
       .then((res) => {
-        this.setLink("data:image/png;base64," + res.data.image);
-         this.setState({ topText: 'inPixio RemoveBG' });
+        this.setLink("data:image/png;base64," + res.data.image)
         } )
-      .then(() => this.setLoading(0));
+      .then(() => console.log(this.state));
     }
      
   };
